@@ -45,7 +45,7 @@ function formatDate(date, format = "YYYY-MM-DD") {
 }
 
 function getType(value) {
-  return Object.prototype.toString.call(value).slice(8, -1).toLowerCase()
+  return Object.prototype.toString.call(value).slice(1, -1).toLowerCase()
 }
 
 function unique(arr) {
