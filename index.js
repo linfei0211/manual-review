@@ -27,7 +27,7 @@ function deepClone(obj) {
 }
 function getQueryParams(url) {
   const params = {}
-  new URL(url).searchParams.map((value, key) => {
+  new URL(url).searchParams.forEach((value, key) => {
     params[key] = value
   })
   return params
@@ -36,7 +36,7 @@ function formatDate(date, format = "YYYY-MM-DD") {
   const d = new Date(date)
   const map = {
     YYYY: d.getFullYear(),
-    MM: String(d.getMonth()).padStart(2, "0"),
+    MM: String(d.getMonth() + 1).padStart(2, "0"),
     DD: String(d.getDate()).padStart(2, "0"),
     HH: String(d.getHours()).padStart(2, "0"),
     mm: String(d.getMinutes()).padStart(2, "0"),
